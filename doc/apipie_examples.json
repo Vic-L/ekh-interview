@@ -32,50 +32,52 @@
         "response_message": "Success!",
         "books": [
           {
-            "id": 4094,
+            "id": 4705,
             "quantity": 10,
             "available_count": 9,
             "loans_count": 2,
-            "title": "Blithe Spirit",
+            "title": "In a Dry Season",
             "current_loans": [
               {
-                "id": 3118,
-                "user_id": 2172,
-                "book_id": 4094,
-                "borrow_at": "2020-12-11T10:18:12.000Z",
+                "id": 3547,
+                "user_id": 2501,
+                "book_id": 4705,
+                "borrow_at": "2020-12-11T13:16:40.000Z",
                 "return_at": null,
                 "amount": 100,
                 "user": {
-                  "id": 2172,
+                  "id": 2501,
                   "amount": 1000,
                   "escrow": 200,
-                  "account_no": "EKH0002172"
+                  "account_no": "EKH0002501",
+                  "balance": 800
                 }
               }
             ],
             "completed_loans": [
               {
-                "id": 3119,
-                "user_id": 2172,
-                "book_id": 4094,
-                "borrow_at": "2020-12-11T10:18:12.000Z",
-                "return_at": "2020-12-12T09:18:12.000Z",
+                "id": 3548,
+                "user_id": 2501,
+                "book_id": 4705,
+                "borrow_at": "2020-12-11T13:16:40.000Z",
+                "return_at": "2020-12-12T12:16:40.000Z",
                 "amount": 100,
                 "user": {
-                  "id": 2172,
+                  "id": 2501,
                   "amount": 1000,
                   "escrow": 200,
-                  "account_no": "EKH0002172"
+                  "account_no": "EKH0002501",
+                  "balance": 800
                 }
               }
             ]
           },
           {
-            "id": 4095,
+            "id": 4706,
             "quantity": 10,
             "available_count": 10,
             "loans_count": 0,
-            "title": "The Wind's Twelve Quarters",
+            "title": "The Green Bay Tree",
             "current_loans": [
 
             ],
@@ -115,8 +117,8 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 4348,
-        "book_id": 4099
+        "user_id": 5006,
+        "book_id": 4710
       },
       "response_data": {
         "response_code": "custom.errors.models.invalid",
@@ -134,8 +136,8 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 2175,
-        "book_id": 8204
+        "user_id": 2504,
+        "book_id": 9426
       },
       "response_data": {
         "response_code": "custom.errors.models.invalid",
@@ -153,17 +155,17 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 2176,
-        "book_id": 4105
+        "user_id": 2505,
+        "book_id": 4716
       },
       "response_data": {
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "loan": {
-          "id": 3120,
-          "user_id": 2176,
-          "book_id": 4105,
-          "borrow_at": "2020-12-12T10:18:12.000Z",
+          "id": 3549,
+          "user_id": 2505,
+          "book_id": 4716,
+          "borrow_at": "2020-12-12T13:16:40.000Z",
           "return_at": null,
           "amount": 100
         }
@@ -180,8 +182,8 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 2177,
-        "book_id": 4109
+        "user_id": 2506,
+        "book_id": 4720
       },
       "response_data": {
         "response_code": "custom.errors.models.books.available_count",
@@ -199,8 +201,8 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 2178,
-        "book_id": 4113
+        "user_id": 2507,
+        "book_id": 4724
       },
       "response_data": {
         "response_code": "custom.errors.models.books.quantity",
@@ -218,8 +220,8 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 2180,
-        "book_id": 4114
+        "user_id": 2509,
+        "book_id": 4725
       },
       "response_data": {
         "response_code": "custom.errors.models.users.insufficient_funds",
@@ -261,10 +263,11 @@
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "user": {
-          "id": 2181,
+          "id": 2510,
           "amount": 9999,
           "escrow": 0,
-          "account_no": "EKH0002181"
+          "account_no": "EKH0002510",
+          "balance": 9999
         }
       },
       "code": 200,
@@ -297,8 +300,8 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 4366,
-        "book_id": 4118
+        "user_id": 5024,
+        "book_id": 4729
       },
       "response_data": {
         "response_code": "custom.errors.models.loans.non_existing",
@@ -316,18 +319,18 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 2184,
-        "book_id": 4119
+        "user_id": 2513,
+        "book_id": 4730
       },
       "response_data": {
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "loan": {
-          "return_at": "2020-12-12T10:18:12.000Z",
-          "user_id": 2184,
-          "book_id": 4119,
-          "id": 3127,
-          "borrow_at": "2020-12-10T10:18:12.000Z",
+          "return_at": "2020-12-12T13:16:41.000Z",
+          "user_id": 2513,
+          "book_id": 4730,
+          "id": 3556,
+          "borrow_at": "2020-12-10T13:16:41.000Z",
           "amount": 100
         }
       },
@@ -359,7 +362,7 @@
       "versions": [
         "v1"
       ],
-      "query": "user_id=4374",
+      "query": "user_id=5032",
       "request_data": null,
       "response_data": {
         "response_code": "custom.errors.record_not_found",
@@ -375,16 +378,17 @@
       "versions": [
         "v1"
       ],
-      "query": "user_id=2189",
+      "query": "user_id=2518",
       "request_data": null,
       "response_data": {
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "user": {
-          "id": 2189,
+          "id": 2518,
           "amount": 1000,
           "escrow": 0,
-          "account_no": "EKH0002189",
+          "account_no": "EKH0002518",
+          "balance": 1000,
           "current_borrowed_books": [
 
           ]
@@ -400,30 +404,31 @@
       "versions": [
         "v1"
       ],
-      "query": "user_id=2192",
+      "query": "user_id=2521",
       "request_data": null,
       "response_data": {
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "user": {
-          "id": 2192,
+          "id": 2521,
           "amount": 1000,
           "escrow": 400,
-          "account_no": "EKH0002192",
+          "account_no": "EKH0002521",
+          "balance": 600,
           "current_borrowed_books": [
             {
-              "id": 4134,
+              "id": 4745,
               "quantity": 10,
               "available_count": 9,
               "loans_count": 1,
-              "title": "An Acceptable Time"
+              "title": "Alone on a Wide, Wide Sea"
             },
             {
-              "id": 4135,
+              "id": 4746,
               "quantity": 10,
               "available_count": 9,
               "loans_count": 1,
-              "title": "Dulce et Decorum Est"
+              "title": "The Doors of Perception"
             }
           ]
         }

@@ -33,6 +33,7 @@ RSpec.describe 'user_account', type: :request do
     expect(response_body.user.respond_to?(:created_at)).to eq false
     expect(response_body.user.respond_to?(:updated_at)).to eq false
     expect(response_body.user.respond_to?(:account_no)).to eq true
+    expect(response_body.user.respond_to?(:balance)).to eq true
     expect(response_body.user.current_borrowed_books).to eq []
   end
   

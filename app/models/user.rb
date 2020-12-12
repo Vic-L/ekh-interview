@@ -11,6 +11,7 @@ class User < ApplicationRecord
     custom_attributes = super
 
     custom_attributes['account_no'] = account_no
+    custom_attributes['balance'] = balance
 
     custom_attributes
   end
