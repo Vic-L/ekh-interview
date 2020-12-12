@@ -32,50 +32,50 @@
         "response_message": "Success!",
         "books": [
           {
-            "id": 85,
+            "id": 2596,
             "quantity": 10,
             "available_count": 9,
             "loans_count": 2,
-            "title": "All Passion Spent",
+            "title": "What's Become of Waring",
             "current_loans": [
               {
-                "id": 83,
-                "user_id": 134,
-                "book_id": 85,
-                "borrow_at": "2020-12-11T05:51:40.000Z",
+                "id": 1856,
+                "user_id": 1297,
+                "book_id": 2596,
+                "borrow_at": "2020-12-11T08:54:56.000Z",
                 "return_at": null,
                 "amount": 100,
                 "user": {
-                  "id": 134,
+                  "id": 1297,
                   "amount": 1000,
-                  "escrow": 0,
-                  "account_no": "EKH0000134"
+                  "escrow": 200,
+                  "account_no": "EKH0001297"
                 }
               }
             ],
             "completed_loans": [
               {
-                "id": 84,
-                "user_id": 134,
-                "book_id": 85,
-                "borrow_at": "2020-12-11T05:51:40.000Z",
-                "return_at": "2020-12-12T04:51:40.000Z",
+                "id": 1857,
+                "user_id": 1297,
+                "book_id": 2596,
+                "borrow_at": "2020-12-11T08:54:56.000Z",
+                "return_at": "2020-12-12T07:54:56.000Z",
                 "amount": 100,
                 "user": {
-                  "id": 134,
+                  "id": 1297,
                   "amount": 1000,
-                  "escrow": 0,
-                  "account_no": "EKH0000134"
+                  "escrow": 200,
+                  "account_no": "EKH0001297"
                 }
               }
             ]
           },
           {
-            "id": 86,
+            "id": 2597,
             "quantity": 10,
             "available_count": 10,
             "loans_count": 0,
-            "title": "Edna O'Brien",
+            "title": "In Death Ground",
             "current_loans": [
 
             ],
@@ -86,6 +86,146 @@
         ]
       },
       "code": 200,
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "base#borrow": [
+    {
+      "verb": "POST",
+      "path": "/api/v1/borrow",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": {
+        "response_code": "custom.errors.apipie.missing_params",
+        "response_message": "Missing parameter user_id"
+      },
+      "code": 400,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/api/v1/borrow",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "user_id": 1299,
+        "book_id": 2601
+      },
+      "response_data": {
+        "response_code": "custom.success.default",
+        "response_message": "Success!",
+        "loan": {
+          "id": 1858,
+          "user_id": 1299,
+          "book_id": 2601,
+          "borrow_at": "2020-12-12T08:54:56.000Z",
+          "return_at": null,
+          "amount": 100
+        }
+      },
+      "code": 200,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/api/v1/borrow",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "user_id": 1300,
+        "book_id": 2605
+      },
+      "response_data": {
+        "response_code": "custom.errors.models.books.available_count",
+        "response_message": "This book is no longer available"
+      },
+      "code": 400,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/api/v1/borrow",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "user_id": 1301,
+        "book_id": 2609
+      },
+      "response_data": {
+        "response_code": "custom.errors.models.books.quantity",
+        "response_message": "This book has been given away"
+      },
+      "code": 400,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/api/v1/borrow",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "user_id": 2604,
+        "book_id": 2610
+      },
+      "response_data": {
+        "response_code": "custom.errors.models.invalid",
+        "response_message": "Validation failed: User must exist"
+      },
+      "code": 400,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/api/v1/borrow",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "user_id": 1303,
+        "book_id": 5226
+      },
+      "response_data": {
+        "response_code": "custom.errors.models.invalid",
+        "response_message": "Validation failed: Book must exist"
+      },
+      "code": 400,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/api/v1/borrow",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "user_id": 1305,
+        "book_id": 2616
+      },
+      "response_data": {
+        "response_code": "custom.errors.models.users.insufficient_funds",
+        "response_message": "This user does not have enough funds to borrow the book"
+      },
+      "code": 400,
       "show_in_doc": 1,
       "recorded": true
     }
@@ -121,10 +261,10 @@
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "user": {
-          "id": 135,
+          "id": 1306,
           "amount": 9999,
           "escrow": 0,
-          "account_no": "EKH0000135"
+          "account_no": "EKH0001306"
         }
       },
       "code": 200,
@@ -155,7 +295,7 @@
       "versions": [
         "v1"
       ],
-      "query": "user_id=276",
+      "query": "user_id=2618",
       "request_data": null,
       "response_data": {
         "response_code": "custom.errors.record_not_found",
@@ -171,16 +311,16 @@
       "versions": [
         "v1"
       ],
-      "query": "user_id=140",
+      "query": "user_id=1311",
       "request_data": null,
       "response_data": {
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "user": {
-          "id": 140,
+          "id": 1311,
           "amount": 1000,
           "escrow": 0,
-          "account_no": "EKH0000140",
+          "account_no": "EKH0001311",
           "current_borrowed_books": [
 
           ]
@@ -196,30 +336,30 @@
       "versions": [
         "v1"
       ],
-      "query": "user_id=143",
+      "query": "user_id=1314",
       "request_data": null,
       "response_data": {
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "user": {
-          "id": 143,
+          "id": 1314,
           "amount": 1000,
-          "escrow": 0,
-          "account_no": "EKH0000143",
+          "escrow": 400,
+          "account_no": "EKH0001314",
           "current_borrowed_books": [
             {
-              "id": 101,
+              "id": 2633,
               "quantity": 10,
               "available_count": 9,
               "loans_count": 1,
-              "title": "Carrion Comfort"
+              "title": "The Curious Incident of the Dog in the Night-Time"
             },
             {
-              "id": 102,
+              "id": 2634,
               "quantity": 10,
               "available_count": 9,
               "loans_count": 1,
-              "title": "The Heart Is a Lonely Hunter"
+              "title": "The Daffodil Sky"
             }
           ]
         }

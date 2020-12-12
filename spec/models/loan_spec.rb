@@ -28,6 +28,17 @@ RSpec.describe Loan, type: :model do
         expect { create(:loan, book: out_of_stock_book) }.to raise_error CustomException, "This book has been given away"
       end
     end
+
+    feature '.increase_user_escrow upon creation' do
+      let(:book) { create(:book) }
+      let(:poor_user) { create(:user, :poor) }
+
+      scenario 'should increase user escrow' do
+        expect {
+          create(:loan, book: book, user: poor_user)
+        }.to raise_error CustomException, "This user does not have enough funds to borrow the book"
+      end
+    end
   end
 
   feature 'scope' do

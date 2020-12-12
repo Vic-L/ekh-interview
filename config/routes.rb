@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       # Create a user interface, the requested parameters support setting the initial amount, returning the user ID
       post '/create_user', to: 'base#create_user'
       # Create a borrowing transaction with parameters for the user's ID and the book's ID
+      post '/borrow', to: 'base#borrow'
       # Create a return transaction with parameters for the user's ID and the book's ID
       # Query the account status of a user, the parameter is the user ID, return the current balance, and borrow the books.
       # Query the actual income of a book, the parameter is the ID and time range of the book, and return the transaction amount obtained by the book during this time.

@@ -33,10 +33,29 @@ module Api
         @user = User.create(amount: user_params[:amount], escrow: 0)
       end
 
+      api :POST, '/borrow', "Create a borrowing transaction with parameters for the user's ID and the book's ID"
+      description "Create a borrowing transaction with parameters for the user's ID and the book's ID"
+      header 'Content-Type', 'application/json'
+      header 'Accept', 'application/json'
+      param :user_id, [Integer, String], required: true
+      param :book_id, [Integer, String], required: true
+      def borrow
+        @loan = Loan.create!(
+          user_id: transaction_params[:user_id],
+          book_id: transaction_params[:book_id],
+          amount: Rails.application.config.price,
+          borrow_at: DateTime.now
+        )
+      end
+
       private
 
       def user_params
         params.permit(:user_id, :amount)
+      end
+
+      def transaction_params
+        params.permit(:user_id, :book_id)
       end
 
       def add_default_response_keys
