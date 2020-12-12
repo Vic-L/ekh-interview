@@ -4,7 +4,7 @@ FactoryBot.define do
   factory :loan do
     user
     book
-    amount { 100 }
+    amount { Rails.application.config.price }
     borrow_at { 24.hours.ago }
 
     trait :returned do
