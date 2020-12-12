@@ -48,6 +48,23 @@ module Api
         )
       end
 
+      api :POST, '/return', "Create a return transaction with parameters for the user's ID and the book's ID"
+      description "Create a return transaction with parameters for the user's ID and the book's ID"
+      header 'Content-Type', 'application/json'
+      header 'Accept', 'application/json'
+      param :user_id, [Integer, String], required: true
+      param :book_id, [Integer, String], required: true
+      def return
+        @loan = Loan.active.where(
+          user_id: transaction_params[:user_id],
+          book_id: transaction_params[:book_id],
+        ).order(:borrow_at).first
+        
+        raise CustomException, "custom.errors.models.loans.non_existing" if @loan.nil?
+
+        @loan.return!
+      end
+
       private
 
       def user_params

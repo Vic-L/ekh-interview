@@ -38,4 +38,10 @@ class User < ApplicationRecord
 
     self.update!(escrow: self.escrow + Rails.application.config.price)
   end
+
+  def subtract_escrow! loan
+    self.lock!
+
+    self.update!(escrow: self.escrow - loan.amount)
+  end
 end

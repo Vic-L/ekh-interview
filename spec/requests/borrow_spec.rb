@@ -21,6 +21,32 @@ RSpec.describe 'borrow', type: :request do
     expect(response.status).to eq 400
   end
 
+  scenario 'should fail if user does not exist', :show_in_doc do
+    post '/api/v1/borrow', params: {
+      user_id: user.id * 2,
+      book_id: book.id,
+    }.to_json,
+    headers: ApiHelpers::DEFAULT_HEADERS
+
+    expect(response_body.response_message).to eq "Validation failed: User must exist"
+    expect(response_body.response_code).to eq 'custom.errors.models.invalid'
+    expect(response.status).to eq 400
+    expect(Loan.count).to eq 0
+  end
+
+  scenario 'should fail if book does not exist', :show_in_doc do
+    post '/api/v1/borrow', params: {
+      user_id: user.id,
+      book_id: book.id * 2,
+    }.to_json,
+    headers: ApiHelpers::DEFAULT_HEADERS
+
+    expect(response_body.response_message).to eq "Validation failed: Book must exist"
+    expect(response_body.response_code).to eq 'custom.errors.models.invalid'
+    expect(response.status).to eq 400
+    expect(Loan.count).to eq 0
+  end
+
   scenario 'should create loan', :show_in_doc do
     expect {
       post '/api/v1/borrow', params: {
@@ -69,32 +95,6 @@ RSpec.describe 'borrow', type: :request do
 
     expect(response_body.response_message).to eq "This book has been given away"
     expect(response_body.response_code).to eq 'custom.errors.models.books.quantity'
-    expect(response.status).to eq 400
-    expect(Loan.count).to eq 0
-  end
-
-  scenario 'should fail if user does not exist', :show_in_doc do
-    post '/api/v1/borrow', params: {
-      user_id: user.id * 2,
-      book_id: book.id,
-    }.to_json,
-    headers: ApiHelpers::DEFAULT_HEADERS
-
-    expect(response_body.response_message).to eq "Validation failed: User must exist"
-    expect(response_body.response_code).to eq 'custom.errors.models.invalid'
-    expect(response.status).to eq 400
-    expect(Loan.count).to eq 0
-  end
-
-  scenario 'should fail if book does not exist', :show_in_doc do
-    post '/api/v1/borrow', params: {
-      user_id: user.id,
-      book_id: book.id * 2,
-    }.to_json,
-    headers: ApiHelpers::DEFAULT_HEADERS
-
-    expect(response_body.response_message).to eq "Validation failed: Book must exist"
-    expect(response_body.response_code).to eq 'custom.errors.models.invalid'
     expect(response.status).to eq 400
     expect(Loan.count).to eq 0
   end

@@ -62,4 +62,33 @@ RSpec.describe Loan, type: :model do
       end
     end
   end
+
+  feature 'instance methods' do
+    feature '#return!' do
+      let!(:user) { create(:user) }
+      let!(:book) { create(:book) }
+      let!(:loan) { create(:loan, user: user, book: book) }
+
+      scenario 'should update return_at' do
+        expect { loan.return! }.to change { loan.reload.return_at }
+      end
+
+      scenario 'should increase book available_count' do
+        expect { loan.return! }.to change {
+          book.reload.available_count
+        }.from(9)
+        .to(10)
+      end
+
+      scenario 'should decrease user escrow by loan amount' do
+        loan.update(amount: Rails.application.config.price - 1)
+        expect(loan.amount).not_to eq Rails.application.config.price
+
+        expect { loan.return! }.to change {
+          user.reload.escrow
+        }.from(Rails.application.config.price)
+        .to(1)
+      end
+    end
+  end
 end

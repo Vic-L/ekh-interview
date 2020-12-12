@@ -10,3 +10,5 @@ en:
           quantity: "This book has been given away"
         users:
           insufficient_funds: "This user does not have enough funds to borrow the book"
+        loans:
+          non_existing: "No active loans of this user and this book"

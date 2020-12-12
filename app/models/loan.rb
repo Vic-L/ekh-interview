@@ -14,6 +14,14 @@ class Loan < ApplicationRecord
   scope :active, -> { where(return_at: nil) }
   scope :past, -> { where.not(return_at: nil) }
 
+  def return!
+    self.lock!
+
+    update!(return_at: DateTime.now)
+    book.increment_available_count!
+    user.subtract_escrow!(self)
+  end
+
   private
 
   def reduce_book_availability!
