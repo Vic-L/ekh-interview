@@ -18,6 +18,14 @@ class User < ApplicationRecord
     custom_attributes
   end
 
+  def current_loans
+    loans.includes(:book).active
+  end
+
+  def current_borrowed_books
+    Book.where(id: current_loans.pluck(:book_id).uniq)
+  end
+
   private
 
   def generate_account_no
