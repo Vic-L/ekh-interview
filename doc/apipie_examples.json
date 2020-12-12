@@ -32,50 +32,50 @@
         "response_message": "Success!",
         "books": [
           {
-            "id": 19,
+            "id": 85,
             "quantity": 10,
             "available_count": 9,
             "loans_count": 2,
-            "title": "An Instant In The Wind",
+            "title": "All Passion Spent",
             "current_loans": [
               {
-                "id": 19,
-                "user_id": 10,
-                "book_id": 19,
-                "borrow_at": "2020-12-11T05:35:37.000Z",
+                "id": 83,
+                "user_id": 134,
+                "book_id": 85,
+                "borrow_at": "2020-12-11T05:51:40.000Z",
                 "return_at": null,
                 "amount": 100,
                 "user": {
-                  "id": 10,
+                  "id": 134,
                   "amount": 1000,
                   "escrow": 0,
-                  "account_no": "EKH0000010"
+                  "account_no": "EKH0000134"
                 }
               }
             ],
             "completed_loans": [
               {
-                "id": 20,
-                "user_id": 10,
-                "book_id": 19,
-                "borrow_at": "2020-12-11T05:35:37.000Z",
-                "return_at": "2020-12-12T04:35:37.000Z",
+                "id": 84,
+                "user_id": 134,
+                "book_id": 85,
+                "borrow_at": "2020-12-11T05:51:40.000Z",
+                "return_at": "2020-12-12T04:51:40.000Z",
                 "amount": 100,
                 "user": {
-                  "id": 10,
+                  "id": 134,
                   "amount": 1000,
                   "escrow": 0,
-                  "account_no": "EKH0000010"
+                  "account_no": "EKH0000134"
                 }
               }
             ]
           },
           {
-            "id": 20,
+            "id": 86,
             "quantity": 10,
             "available_count": 10,
             "loans_count": 0,
-            "title": "Blithe Spirit",
+            "title": "Edna O'Brien",
             "current_loans": [
 
             ],
@@ -84,6 +84,48 @@
             ]
           }
         ]
+      },
+      "code": 200,
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "base#create_user": [
+    {
+      "verb": "POST",
+      "path": "/api/v1/create_user",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": {
+        "response_code": "custom.errors.apipie.missing_params",
+        "response_message": "Missing parameter amount"
+      },
+      "code": 400,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/api/v1/create_user",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "amount": 9999
+      },
+      "response_data": {
+        "response_code": "custom.success.default",
+        "response_message": "Success!",
+        "user": {
+          "id": 135,
+          "amount": 9999,
+          "escrow": 0,
+          "account_no": "EKH0000135"
+        }
       },
       "code": 200,
       "show_in_doc": 1,
@@ -113,7 +155,7 @@
       "versions": [
         "v1"
       ],
-      "query": "user_id=26",
+      "query": "user_id=276",
       "request_data": null,
       "response_data": {
         "response_code": "custom.errors.record_not_found",
@@ -129,16 +171,16 @@
       "versions": [
         "v1"
       ],
-      "query": "user_id=15",
+      "query": "user_id=140",
       "request_data": null,
       "response_data": {
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "user": {
-          "id": 15,
+          "id": 140,
           "amount": 1000,
           "escrow": 0,
-          "account_no": "EKH0000015",
+          "account_no": "EKH0000140",
           "current_borrowed_books": [
 
           ]
@@ -154,30 +196,30 @@
       "versions": [
         "v1"
       ],
-      "query": "user_id=18",
+      "query": "user_id=143",
       "request_data": null,
       "response_data": {
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "user": {
-          "id": 18,
+          "id": 143,
           "amount": 1000,
           "escrow": 0,
-          "account_no": "EKH0000018",
+          "account_no": "EKH0000143",
           "current_borrowed_books": [
             {
-              "id": 35,
+              "id": 101,
               "quantity": 10,
               "available_count": 9,
               "loans_count": 1,
-              "title": "The Heart Is Deceitful Above All Things"
+              "title": "Carrion Comfort"
             },
             {
-              "id": 36,
+              "id": 102,
               "quantity": 10,
               "available_count": 9,
               "loans_count": 1,
-              "title": "Cabbages and Kings"
+              "title": "The Heart Is a Lonely Hunter"
             }
           ]
         }

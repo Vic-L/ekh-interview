@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       # Query the current remaining number of each book, the total number of loans, and the current loan status between the users.
       get '/books', to: 'base#books'
       # Create a user interface, the requested parameters support setting the initial amount, returning the user ID
+      post '/create_user', to: 'base#create_user'
       # Create a borrowing transaction with parameters for the user's ID and the book's ID
       # Create a return transaction with parameters for the user's ID and the book's ID
       # Query the account status of a user, the parameter is the user ID, return the current balance, and borrow the books.

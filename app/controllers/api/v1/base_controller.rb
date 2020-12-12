@@ -34,10 +34,19 @@ module Api
         @books = Book.includes(:loans).includes(loans: :user)
       end
 
+      api :POST, '/create_user', "Create a user interface, the requested parameters support setting the initial amount, returning the user ID"
+      description "Create a user interface, the requested parameters support setting the initial amount, returning the user ID"
+      header 'Content-Type', 'application/json'
+      header 'Accept', 'application/json'
+      param :amount, Integer, required: true, desc: "Provide value in cents"
+      def create_user
+        @user = User.create(amount: user_params[:amount], escrow: 0)
+      end
+
       private
 
       def user_params
-        params.permit(:user_id)
+        params.permit(:user_id, :amount)
       end
 
       def add_default_response_keys
