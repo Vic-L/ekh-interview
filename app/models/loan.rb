@@ -8,5 +8,14 @@ class Loan < ApplicationRecord
             :borrow_at,
             presence: true
 
+  after_create :reduce_book_availability!
+
   scope :active, -> { where(return_at: nil) }
+  scope :past, -> { where.not(return_at: nil) }
+
+  private
+
+  def reduce_book_availability!
+    book.subtract_available_count!
+  end
 end

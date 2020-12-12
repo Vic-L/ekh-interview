@@ -26,6 +26,14 @@ module Api
         end
       end
 
+      api :GET, '/books', "Query the current remaining number of each book, the total number of loans, and the current loan status between the users."
+      description "Query the current remaining number of each book, the total number of loans, and the current loan status between the users."
+      header 'Content-Type', 'application/json'
+      header 'Accept', 'application/json'
+      def books
+        @books = Book.includes(:loans).includes(loans: :user)
+      end
+
       private
 
       def user_params

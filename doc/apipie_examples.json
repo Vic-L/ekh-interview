@@ -1,4 +1,78 @@
 {
+  "base#books": [
+    {
+      "verb": "GET",
+      "path": "/api/v1/books",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": {
+        "response_code": "custom.success.default",
+        "response_message": "Success!",
+        "books": [
+
+        ]
+      },
+      "code": 200,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/api/v1/books",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": {
+        "response_code": "custom.success.default",
+        "response_message": "Success!",
+        "books": [
+          {
+            "id": 384,
+            "quantity": 10,
+            "available_count": 9,
+            "loans_count": 1,
+            "title": "Bury My Heart at Wounded Knee",
+            "current_loans": [
+              {
+                "id": 343,
+                "user_id": 286,
+                "book_id": 384,
+                "borrow_at": "2020-12-11T05:10:31.000Z",
+                "return_at": null,
+                "amount": 100,
+                "created_at": "2020-12-12T05:10:31.541Z",
+                "updated_at": "2020-12-12T05:10:31.541Z",
+                "user": {
+                  "id": 286,
+                  "amount": 1000,
+                  "escrow": 0,
+                  "account_no": "EKH0000286"
+                }
+              }
+            ]
+          },
+          {
+            "id": 385,
+            "quantity": 10,
+            "available_count": 10,
+            "loans_count": null,
+            "title": "A Monstrous Regiment of Women",
+            "current_loans": [
+
+            ]
+          }
+        ]
+      },
+      "code": 200,
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
   "base#user_account": [
     {
       "verb": "GET",
@@ -22,7 +96,7 @@
       "versions": [
         "v1"
       ],
-      "query": "user_id=298",
+      "query": "user_id=578",
       "request_data": null,
       "response_data": {
         "response_code": "custom.errors.record_not_found",
@@ -38,16 +112,16 @@
       "versions": [
         "v1"
       ],
-      "query": "user_id=151",
+      "query": "user_id=291",
       "request_data": null,
       "response_data": {
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "user": {
-          "id": 151,
+          "id": 291,
           "amount": 1000,
           "escrow": 0,
-          "account_no": "EKH0000151",
+          "account_no": "EKH0000291",
           "current_borrowed_books": [
 
           ]
@@ -63,30 +137,30 @@
       "versions": [
         "v1"
       ],
-      "query": "user_id=154",
+      "query": "user_id=294",
       "request_data": null,
       "response_data": {
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "user": {
-          "id": 154,
+          "id": 294,
           "amount": 1000,
           "escrow": 0,
-          "account_no": "EKH0000154",
+          "account_no": "EKH0000294",
           "current_borrowed_books": [
             {
-              "id": 91,
+              "id": 400,
               "quantity": 10,
-              "available_count": 10,
+              "available_count": 9,
               "loans_count": 1,
-              "title": "The Soldier's Art"
+              "title": "A Time to Kill"
             },
             {
-              "id": 92,
+              "id": 401,
               "quantity": 10,
-              "available_count": 10,
+              "available_count": 9,
               "loans_count": 1,
-              "title": "To Sail Beyond the Sunset"
+              "title": "The Other Side of Silence"
             }
           ]
         }
