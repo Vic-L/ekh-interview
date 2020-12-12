@@ -25,4 +25,8 @@ class Book < ApplicationRecord
 
     self.update!(available_count: self.available_count + 1)
   end
+
+  def income from:, till:
+    completed_loans.where("return_at >= ? AND return_at <= ?", from, till).sum(:amount)
+  end
 end

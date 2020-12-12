@@ -1,4 +1,55 @@
 {
+  "base#book_income": [
+    {
+      "verb": "GET",
+      "path": "/api/v1/book_income",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": {
+        "response_code": "custom.errors.apipie.missing_params",
+        "response_message": "Missing parameter book_id"
+      },
+      "code": 400,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/api/v1/book_income",
+      "versions": [
+        "v1"
+      ],
+      "query": "book_id=9902&from=2020-12-11&till=2020-12-13",
+      "request_data": null,
+      "response_data": {
+        "response_code": "custom.errors.record_not_found",
+        "response_message": "Book does not exist in our database"
+      },
+      "code": 404,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/api/v1/book_income",
+      "versions": [
+        "v1"
+      ],
+      "query": "book_id=4952&from=2020-11-28&till=2020-12-05",
+      "request_data": null,
+      "response_data": {
+        "response_code": "custom.success.default",
+        "response_message": "Success!",
+        "income": 200
+      },
+      "code": 200,
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
   "base#books": [
     {
       "verb": "GET",
@@ -32,52 +83,52 @@
         "response_message": "Success!",
         "books": [
           {
-            "id": 4705,
+            "id": 4953,
             "quantity": 10,
             "available_count": 9,
             "loans_count": 2,
-            "title": "In a Dry Season",
+            "title": "The Way Through the Woods",
             "current_loans": [
               {
-                "id": 3547,
-                "user_id": 2501,
-                "book_id": 4705,
-                "borrow_at": "2020-12-11T13:16:40.000Z",
+                "id": 3703,
+                "user_id": 2632,
+                "book_id": 4953,
+                "borrow_at": "2020-12-11T14:32:01.000Z",
                 "return_at": null,
                 "amount": 100,
                 "user": {
-                  "id": 2501,
+                  "id": 2632,
                   "amount": 1000,
                   "escrow": 200,
-                  "account_no": "EKH0002501",
+                  "account_no": "EKH0002632",
                   "balance": 800
                 }
               }
             ],
             "completed_loans": [
               {
-                "id": 3548,
-                "user_id": 2501,
-                "book_id": 4705,
-                "borrow_at": "2020-12-11T13:16:40.000Z",
-                "return_at": "2020-12-12T12:16:40.000Z",
+                "id": 3704,
+                "user_id": 2632,
+                "book_id": 4953,
+                "borrow_at": "2020-12-11T14:32:01.000Z",
+                "return_at": "2020-12-12T13:32:01.000Z",
                 "amount": 100,
                 "user": {
-                  "id": 2501,
+                  "id": 2632,
                   "amount": 1000,
                   "escrow": 200,
-                  "account_no": "EKH0002501",
+                  "account_no": "EKH0002632",
                   "balance": 800
                 }
               }
             ]
           },
           {
-            "id": 4706,
+            "id": 4954,
             "quantity": 10,
             "available_count": 10,
             "loans_count": 0,
-            "title": "The Green Bay Tree",
+            "title": "Ah, Wilderness!",
             "current_loans": [
 
             ],
@@ -117,8 +168,8 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 5006,
-        "book_id": 4710
+        "user_id": 5268,
+        "book_id": 4958
       },
       "response_data": {
         "response_code": "custom.errors.models.invalid",
@@ -136,8 +187,8 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 2504,
-        "book_id": 9426
+        "user_id": 2635,
+        "book_id": 9922
       },
       "response_data": {
         "response_code": "custom.errors.models.invalid",
@@ -155,17 +206,17 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 2505,
-        "book_id": 4716
+        "user_id": 2636,
+        "book_id": 4964
       },
       "response_data": {
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "loan": {
-          "id": 3549,
-          "user_id": 2505,
-          "book_id": 4716,
-          "borrow_at": "2020-12-12T13:16:40.000Z",
+          "id": 3705,
+          "user_id": 2636,
+          "book_id": 4964,
+          "borrow_at": "2020-12-12T14:32:01.000Z",
           "return_at": null,
           "amount": 100
         }
@@ -182,8 +233,8 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 2506,
-        "book_id": 4720
+        "user_id": 2637,
+        "book_id": 4968
       },
       "response_data": {
         "response_code": "custom.errors.models.books.available_count",
@@ -201,8 +252,8 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 2507,
-        "book_id": 4724
+        "user_id": 2638,
+        "book_id": 4972
       },
       "response_data": {
         "response_code": "custom.errors.models.books.quantity",
@@ -220,8 +271,8 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 2509,
-        "book_id": 4725
+        "user_id": 2640,
+        "book_id": 4973
       },
       "response_data": {
         "response_code": "custom.errors.models.users.insufficient_funds",
@@ -263,10 +314,10 @@
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "user": {
-          "id": 2510,
+          "id": 2641,
           "amount": 9999,
           "escrow": 0,
-          "account_no": "EKH0002510",
+          "account_no": "EKH0002641",
           "balance": 9999
         }
       },
@@ -300,8 +351,8 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 5024,
-        "book_id": 4729
+        "user_id": 5286,
+        "book_id": 4977
       },
       "response_data": {
         "response_code": "custom.errors.models.loans.non_existing",
@@ -319,18 +370,18 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 2513,
-        "book_id": 4730
+        "user_id": 2644,
+        "book_id": 4978
       },
       "response_data": {
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "loan": {
-          "return_at": "2020-12-12T13:16:41.000Z",
-          "user_id": 2513,
-          "book_id": 4730,
-          "id": 3556,
-          "borrow_at": "2020-12-10T13:16:41.000Z",
+          "return_at": "2020-12-12T14:32:01.000Z",
+          "user_id": 2644,
+          "book_id": 4978,
+          "id": 3712,
+          "borrow_at": "2020-12-10T14:32:01.000Z",
           "amount": 100
         }
       },
@@ -362,7 +413,7 @@
       "versions": [
         "v1"
       ],
-      "query": "user_id=5032",
+      "query": "user_id=5294",
       "request_data": null,
       "response_data": {
         "response_code": "custom.errors.record_not_found",
@@ -378,16 +429,16 @@
       "versions": [
         "v1"
       ],
-      "query": "user_id=2518",
+      "query": "user_id=2649",
       "request_data": null,
       "response_data": {
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "user": {
-          "id": 2518,
+          "id": 2649,
           "amount": 1000,
           "escrow": 0,
-          "account_no": "EKH0002518",
+          "account_no": "EKH0002649",
           "balance": 1000,
           "current_borrowed_books": [
 
@@ -404,31 +455,31 @@
       "versions": [
         "v1"
       ],
-      "query": "user_id=2521",
+      "query": "user_id=2652",
       "request_data": null,
       "response_data": {
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "user": {
-          "id": 2521,
+          "id": 2652,
           "amount": 1000,
           "escrow": 400,
-          "account_no": "EKH0002521",
+          "account_no": "EKH0002652",
           "balance": 600,
           "current_borrowed_books": [
             {
-              "id": 4745,
+              "id": 4993,
               "quantity": 10,
               "available_count": 9,
               "loans_count": 1,
-              "title": "Alone on a Wide, Wide Sea"
+              "title": "A Monstrous Regiment of Women"
             },
             {
-              "id": 4746,
+              "id": 4994,
               "quantity": 10,
               "available_count": 9,
               "loans_count": 1,
-              "title": "The Doors of Perception"
+              "title": "Shall not Perish"
             }
           ]
         }

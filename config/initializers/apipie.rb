@@ -10,3 +10,26 @@ Apipie.configure do |config|
   config.api_controllers_matcher = "#{Rails.root}/app/controllers/api/**/*.rb"
   config.show_all_examples = true
 end
+
+class DateValidator < Apipie::Validator::BaseValidator
+  def initialize(param_description, argument)
+    super(param_description)
+    @type = argument
+  end
+
+  def validate(value)
+    return false if value.nil?
+
+    !!value.try(:to_date)
+  end
+
+  def self.build(param_description, argument, options, block)
+    if argument == Date
+      self.new(param_description, argument)
+    end
+  end
+
+  def description
+    "Must be #{@type}."
+  end
+end

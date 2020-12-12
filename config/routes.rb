@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       post '/return', to: 'base#return'
       # Query the account status of a user, the parameter is the user ID, return the current balance, and borrow the books.
       # Query the actual income of a book, the parameter is the ID and time range of the book, and return the transaction amount obtained by the book during this time.
+      get '/book_income', to: 'base#book_income'
     end
   end
 end

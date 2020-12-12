@@ -65,6 +65,21 @@ module Api
         @loan.return!
       end
 
+      api :GET, '/book_income', "Query the actual income of a book, the parameter is the ID and time range of the book, and return the transaction amount obtained by the book during this time."
+      description "Query the actual income of a book, the parameter is the ID and time range of the book, and return the transaction amount obtained by the book during this time."
+      header 'Content-Type', 'application/json'
+      header 'Accept', 'application/json'
+      param :book_id, [Integer, String], required: true
+      param :from, Date, required: true
+      param :till, Date, required: true
+      def book_income
+        book = Book.includes(:loans).find(book_params[:book_id])
+        @income = book.income(
+          from: book_params[:from].to_date.beginning_of_day,
+          till: book_params[:till].to_date.end_of_day
+        )
+      end
+
       private
 
       def user_params
@@ -73,6 +88,10 @@ module Api
 
       def transaction_params
         params.permit(:user_id, :book_id)
+      end
+
+      def book_params
+        params.permit(:book_id, :from, :till)
       end
 
       def add_default_response_keys
