@@ -32,6 +32,8 @@ class User < ApplicationRecord
   end
 
   def add_to_escrow!
+    self.lock!
+
     raise CustomException, "custom.errors.models.users.insufficient_funds" if balance < Rails.application.config.price
 
     self.update!(escrow: self.escrow + Rails.application.config.price)

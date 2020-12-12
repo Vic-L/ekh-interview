@@ -12,6 +12,7 @@ class Book < ApplicationRecord
   end
 
   def subtract_available_count!
+    self.lock!
 
     raise CustomException, "custom.errors.models.books.quantity" if quantity.zero?
     raise CustomException, "custom.errors.models.books.available_count" if available_count.zero?
@@ -20,6 +21,8 @@ class Book < ApplicationRecord
   end
 
   def increment_available_count!
+    self.lock!
+
     self.update!(available_count: self.available_count + 1)
   end
 end
