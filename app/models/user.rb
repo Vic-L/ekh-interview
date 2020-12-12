@@ -26,4 +26,14 @@ class User < ApplicationRecord
   def account_no
     "EKH#{id.to_s.rjust(7, '0')}"
   end
+
+  def balance
+    amount - escrow
+  end
+
+  def add_to_escrow!
+    raise CustomException, "custom.errors.models.users.insufficient_funds" if balance < Rails.application.config.price
+
+    self.update!(escrow: self.escrow + Rails.application.config.price)
+  end
 end

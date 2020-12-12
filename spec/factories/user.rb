@@ -11,5 +11,9 @@ FactoryBot.define do
         create_list(:loan, 2, user: user)
       end
     end
+
+    trait :poor do
+      escrow { 999 }
+    end
   end
 end

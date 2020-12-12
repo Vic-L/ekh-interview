@@ -42,5 +42,33 @@ RSpec.describe User, type: :model do
         expect(user.account_no).to eq "EKH0000123"
       end
     end
+
+    feature '#balance' do
+      let(:user) { create(:user, amount: 123, escrow: 12) }
+
+      scenario 'should give the difference between amount and escrow' do
+        expect(user.balance).to eq 111
+      end
+    end
+
+    feature '#add_to_escrow!' do
+      let(:user) { create(:user, escrow: 20) }
+      let(:poor_user) { create(:user, :poor) }
+
+      scenario 'should increase escrow by the price constant' do
+        expect {
+          user.add_to_escrow!
+        }.to change {
+          user.escrow
+        }.from(20)
+        .to(Rails.application.config.price + 20)
+      end
+
+      scenario 'should raise error if user does not have enough funds' do
+        expect {
+          poor_user.add_to_escrow!
+        }.to raise_error CustomException, "This user does not have enough funds to borrow the book"
+      end
+    end
   end
 end

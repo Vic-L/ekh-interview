@@ -8,3 +8,5 @@ en:
         books:
           available_count: "This book is no longer available"
           quantity: "This book has been given away"
+        users:
+          insufficient_funds: "This user does not have enough funds to borrow the book"
