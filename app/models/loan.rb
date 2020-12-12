@@ -19,7 +19,7 @@ class Loan < ApplicationRecord
 
     update!(return_at: DateTime.now)
     book.increment_available_count!
-    user.subtract_escrow!(self)
+    user.return!(self)
   end
 
   private

@@ -70,5 +70,33 @@ RSpec.describe User, type: :model do
         }.to raise_error CustomException, "This user does not have enough funds to borrow the book"
       end
     end
+
+    feature '#return!' do
+      let!(:user) { create(:user) }
+      let!(:loan) { create(:loan, user: user) }
+
+      before :each do
+        expect(user.reload.amount).to eq 1000
+        expect(user.escrow).to eq Rails.application.config.price
+      end
+      
+      scenario 'should reduce amount' do
+        expect {
+          user.return!(loan)
+        }.to change {
+          user.reload.amount
+        }.from(1000)
+        .to(1000 - Rails.application.config.price)
+      end
+      
+      scenario 'should decrease escrow' do
+        expect {
+          user.return!(loan)
+        }.to change {
+          user.reload.escrow
+        }.from(Rails.application.config.price)
+        .to(0)
+      end
+    end
   end
 end
