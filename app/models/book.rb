@@ -12,7 +12,9 @@ class Book < ApplicationRecord
   end
 
   def subtract_available_count!
-    raise I18n.t('custom.errors.models.books.available_count') if available_count.zero?
+
+    raise CustomException, "custom.errors.models.books.quantity" if quantity.zero?
+    raise CustomException, "custom.errors.models.books.available_count" if available_count.zero?
 
     self.update!(available_count: self.available_count - 1)
   end

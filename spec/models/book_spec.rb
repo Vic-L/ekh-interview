@@ -16,12 +16,16 @@ RSpec.describe Book, type: :model do
     end
 
     feature '#subtract_available_count!' do
-      let!(:book) { create(:book) }
+      let(:book) { create(:book) }
+      let(:out_of_stock_book) { create(:book, :out_of_stock) }
+      let(:unavailable_book) { create(:book, :unavailable) }
+
+      scenario 'should raise error if quantity is 0' do
+        expect { out_of_stock_book.subtract_available_count! }.to raise_error CustomException, "This book has been given away"
+      end
 
       scenario 'should raise error if available_count is already 0' do
-        book.update(available_count: 0)
-        expect(book.reload.available_count).to eq 0
-        expect { book.subtract_available_count! }.to raise_error "This book is no longer available"
+        expect { unavailable_book.subtract_available_count! }.to raise_error CustomException, "This book is no longer available"
       end
 
       scenario 'should reduce available_count by 1' do

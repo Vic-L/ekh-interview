@@ -7,3 +7,4 @@ en:
       models:
         books:
           available_count: "This book is no longer available"
+          quantity: "This book has been given away"
