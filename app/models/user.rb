@@ -9,9 +9,7 @@ class User < ApplicationRecord
 
   def json_attributes
     custom_attributes = super
-    
-    custom_attributes.delete 'created_at'
-    custom_attributes.delete 'updated_at'
+
     custom_attributes['account_no'] = account_no
 
     custom_attributes

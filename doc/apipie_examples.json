@@ -32,37 +32,54 @@
         "response_message": "Success!",
         "books": [
           {
-            "id": 384,
+            "id": 19,
             "quantity": 10,
             "available_count": 9,
-            "loans_count": 1,
-            "title": "Bury My Heart at Wounded Knee",
+            "loans_count": 2,
+            "title": "An Instant In The Wind",
             "current_loans": [
               {
-                "id": 343,
-                "user_id": 286,
-                "book_id": 384,
-                "borrow_at": "2020-12-11T05:10:31.000Z",
+                "id": 19,
+                "user_id": 10,
+                "book_id": 19,
+                "borrow_at": "2020-12-11T05:35:37.000Z",
                 "return_at": null,
                 "amount": 100,
-                "created_at": "2020-12-12T05:10:31.541Z",
-                "updated_at": "2020-12-12T05:10:31.541Z",
                 "user": {
-                  "id": 286,
+                  "id": 10,
                   "amount": 1000,
                   "escrow": 0,
-                  "account_no": "EKH0000286"
+                  "account_no": "EKH0000010"
+                }
+              }
+            ],
+            "completed_loans": [
+              {
+                "id": 20,
+                "user_id": 10,
+                "book_id": 19,
+                "borrow_at": "2020-12-11T05:35:37.000Z",
+                "return_at": "2020-12-12T04:35:37.000Z",
+                "amount": 100,
+                "user": {
+                  "id": 10,
+                  "amount": 1000,
+                  "escrow": 0,
+                  "account_no": "EKH0000010"
                 }
               }
             ]
           },
           {
-            "id": 385,
+            "id": 20,
             "quantity": 10,
             "available_count": 10,
-            "loans_count": null,
-            "title": "A Monstrous Regiment of Women",
+            "loans_count": 0,
+            "title": "Blithe Spirit",
             "current_loans": [
+
+            ],
+            "completed_loans": [
 
             ]
           }
@@ -96,7 +113,7 @@
       "versions": [
         "v1"
       ],
-      "query": "user_id=578",
+      "query": "user_id=26",
       "request_data": null,
       "response_data": {
         "response_code": "custom.errors.record_not_found",
@@ -112,16 +129,16 @@
       "versions": [
         "v1"
       ],
-      "query": "user_id=291",
+      "query": "user_id=15",
       "request_data": null,
       "response_data": {
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "user": {
-          "id": 291,
+          "id": 15,
           "amount": 1000,
           "escrow": 0,
-          "account_no": "EKH0000291",
+          "account_no": "EKH0000015",
           "current_borrowed_books": [
 
           ]
@@ -137,30 +154,30 @@
       "versions": [
         "v1"
       ],
-      "query": "user_id=294",
+      "query": "user_id=18",
       "request_data": null,
       "response_data": {
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "user": {
-          "id": 294,
+          "id": 18,
           "amount": 1000,
           "escrow": 0,
-          "account_no": "EKH0000294",
+          "account_no": "EKH0000018",
           "current_borrowed_books": [
             {
-              "id": 400,
+              "id": 35,
               "quantity": 10,
               "available_count": 9,
               "loans_count": 1,
-              "title": "A Time to Kill"
+              "title": "The Heart Is Deceitful Above All Things"
             },
             {
-              "id": 401,
+              "id": 36,
               "quantity": 10,
               "available_count": 9,
               "loans_count": 1,
-              "title": "The Other Side of Silence"
+              "title": "Cabbages and Kings"
             }
           ]
         }
