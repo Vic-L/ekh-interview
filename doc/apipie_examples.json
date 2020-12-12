@@ -22,7 +22,7 @@
       "versions": [
         "v1"
       ],
-      "query": "user_id=602",
+      "query": "user_id=298",
       "request_data": null,
       "response_data": {
         "response_code": "custom.errors.record_not_found",
@@ -38,16 +38,16 @@
       "versions": [
         "v1"
       ],
-      "query": "user_id=303",
+      "query": "user_id=151",
       "request_data": null,
       "response_data": {
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "user": {
-          "id": 303,
-          "account_no": "EKH0000303",
+          "id": 151,
           "amount": 1000,
           "escrow": 0,
+          "account_no": "EKH0000151",
           "current_borrowed_books": [
 
           ]
@@ -63,28 +63,30 @@
       "versions": [
         "v1"
       ],
-      "query": "user_id=306",
+      "query": "user_id=154",
       "request_data": null,
       "response_data": {
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "user": {
-          "id": 306,
-          "account_no": "EKH0000306",
+          "id": 154,
           "amount": 1000,
           "escrow": 0,
+          "account_no": "EKH0000154",
           "current_borrowed_books": [
             {
-              "id": 208,
+              "id": 91,
               "quantity": 10,
               "available_count": 10,
-              "loans_count": 1
+              "loans_count": 1,
+              "title": "The Soldier's Art"
             },
             {
-              "id": 209,
+              "id": 92,
               "quantity": 10,
               "available_count": 10,
-              "loans_count": 1
+              "loans_count": 1,
+              "title": "To Sail Beyond the Sunset"
             }
           ]
         }
