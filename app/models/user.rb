@@ -31,5 +31,6 @@ class User < ApplicationRecord
   def generate_account_no
     # guarantees uniqueness since tagged to id
     self.account_no = "EKH#{self.id.to_s.rjust(7, '0')}"
+    self.save
   end
 end

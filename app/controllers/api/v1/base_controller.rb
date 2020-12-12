@@ -14,9 +14,15 @@ module Api
       param :user_id, [Integer, String], required: true
       def user_account
         begin
-          @user = User.find(user_params[:user_id])
-        rescue ActiveRecord::RecordNotFound
-          @user = nil
+          @user = User.includes(:loans).includes(loans: :book).find(user_params[:user_id])
+        rescue ActiveRecord::RecordNotFound => e
+          # puts e.message # for logging
+
+          response_code = 'custom.errors.record_not_found'
+          render json: {
+            response_code: response_code,
+            response_message: I18n.t(response_code, model: 'User'),
+          }, status: 404
         end
       end
 

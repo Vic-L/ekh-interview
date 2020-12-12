@@ -1,0 +1,97 @@
+{
+  "base#user_account": [
+    {
+      "verb": "GET",
+      "path": "/api/v1/user_account",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": {
+        "response_code": "custom.errors.apipie.missing_params",
+        "response_message": "Missing parameter user_id"
+      },
+      "code": 400,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/api/v1/user_account",
+      "versions": [
+        "v1"
+      ],
+      "query": "user_id=602",
+      "request_data": null,
+      "response_data": {
+        "response_code": "custom.errors.record_not_found",
+        "response_message": "User does not exist in our database"
+      },
+      "code": 404,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/api/v1/user_account",
+      "versions": [
+        "v1"
+      ],
+      "query": "user_id=303",
+      "request_data": null,
+      "response_data": {
+        "response_code": "custom.success.default",
+        "response_message": "Success!",
+        "user": {
+          "id": 303,
+          "account_no": "EKH0000303",
+          "amount": 1000,
+          "escrow": 0,
+          "current_borrowed_books": [
+
+          ]
+        }
+      },
+      "code": 200,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/api/v1/user_account",
+      "versions": [
+        "v1"
+      ],
+      "query": "user_id=306",
+      "request_data": null,
+      "response_data": {
+        "response_code": "custom.success.default",
+        "response_message": "Success!",
+        "user": {
+          "id": 306,
+          "account_no": "EKH0000306",
+          "amount": 1000,
+          "escrow": 0,
+          "current_borrowed_books": [
+            {
+              "id": 208,
+              "quantity": 10,
+              "available_count": 10,
+              "loans_count": 1
+            },
+            {
+              "id": 209,
+              "quantity": 10,
+              "available_count": 10,
+              "loans_count": 1
+            }
+          ]
+        }
+      },
+      "code": 200,
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ]
+}
