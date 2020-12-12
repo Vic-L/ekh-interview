@@ -13,17 +13,7 @@ module Api
       header 'Accept', 'application/json'
       param :user_id, [Integer, String], required: true
       def user_account
-        begin
-          @user = User.includes(:loans).includes(loans: :book).find(user_params[:user_id])
-        rescue ActiveRecord::RecordNotFound => e
-          # puts e.message # for logging
-
-          response_code = 'custom.errors.record_not_found'
-          render json: {
-            response_code: response_code,
-            response_message: I18n.t(response_code, model: 'User'),
-          }, status: 404
-        end
+        @user = User.includes(:loans).includes(loans: :book).find(user_params[:user_id])
       end
 
       api :GET, '/books', "Query the current remaining number of each book, the total number of loans, and the current loan status between the users."
