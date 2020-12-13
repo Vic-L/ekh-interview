@@ -34,7 +34,7 @@ RSpec.describe 'books', type: :request do
       expect(response_body.books.first.id).to eq book1.id
       book = response_body.books.first
       expect(book.loans_count).to eq 2
-      expect(book.available_count).to eq 9
+      expect(book.quantity).to eq 9
 
       expect(book.current_loans.count).to eq 1
       current_loan = book.current_loans.first

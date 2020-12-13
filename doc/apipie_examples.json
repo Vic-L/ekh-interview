@@ -22,7 +22,7 @@
       "versions": [
         "v1"
       ],
-      "query": "book_id=9902&from=2020-12-11&till=2020-12-13",
+      "query": "book_id=334&from=2020-12-12&till=2020-12-14",
       "request_data": null,
       "response_data": {
         "response_code": "custom.errors.record_not_found",
@@ -38,7 +38,7 @@
       "versions": [
         "v1"
       ],
-      "query": "book_id=4952&from=2020-11-28&till=2020-12-05",
+      "query": "book_id=168&from=2020-11-29&till=2020-12-06",
       "request_data": null,
       "response_data": {
         "response_code": "custom.success.default",
@@ -83,52 +83,50 @@
         "response_message": "Success!",
         "books": [
           {
-            "id": 4953,
-            "quantity": 10,
-            "available_count": 9,
+            "id": 169,
+            "title": "The Painted Veil",
+            "quantity": 9,
             "loans_count": 2,
-            "title": "The Way Through the Woods",
             "current_loans": [
               {
-                "id": 3703,
-                "user_id": 2632,
-                "book_id": 4953,
-                "borrow_at": "2020-12-11T14:32:01.000Z",
+                "id": 163,
+                "user_id": 229,
+                "book_id": 169,
+                "borrow_at": "2020-12-12T04:07:15.000Z",
                 "return_at": null,
                 "amount": 100,
                 "user": {
-                  "id": 2632,
+                  "id": 229,
                   "amount": 1000,
                   "escrow": 200,
-                  "account_no": "EKH0002632",
+                  "account_no": "EKH0000229",
                   "balance": 800
                 }
               }
             ],
             "completed_loans": [
               {
-                "id": 3704,
-                "user_id": 2632,
-                "book_id": 4953,
-                "borrow_at": "2020-12-11T14:32:01.000Z",
-                "return_at": "2020-12-12T13:32:01.000Z",
+                "id": 164,
+                "user_id": 229,
+                "book_id": 169,
+                "borrow_at": "2020-12-12T04:07:15.000Z",
+                "return_at": "2020-12-13T03:07:15.000Z",
                 "amount": 100,
                 "user": {
-                  "id": 2632,
+                  "id": 229,
                   "amount": 1000,
                   "escrow": 200,
-                  "account_no": "EKH0002632",
+                  "account_no": "EKH0000229",
                   "balance": 800
                 }
               }
             ]
           },
           {
-            "id": 4954,
+            "id": 170,
+            "title": "Of Mice and Men",
             "quantity": 10,
-            "available_count": 10,
             "loans_count": 0,
-            "title": "Ah, Wilderness!",
             "current_loans": [
 
             ],
@@ -168,8 +166,8 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 5268,
-        "book_id": 4958
+        "user_id": 462,
+        "book_id": 173
       },
       "response_data": {
         "response_code": "custom.errors.models.invalid",
@@ -187,8 +185,8 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 2635,
-        "book_id": 9922
+        "user_id": 232,
+        "book_id": 350
       },
       "response_data": {
         "response_code": "custom.errors.models.invalid",
@@ -206,17 +204,17 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 2636,
-        "book_id": 4964
+        "user_id": 233,
+        "book_id": 177
       },
       "response_data": {
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "loan": {
-          "id": 3705,
-          "user_id": 2636,
-          "book_id": 4964,
-          "borrow_at": "2020-12-12T14:32:01.000Z",
+          "id": 165,
+          "user_id": 233,
+          "book_id": 177,
+          "borrow_at": "2020-12-13T04:07:15.000Z",
           "return_at": null,
           "amount": 100
         }
@@ -233,11 +231,11 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 2637,
-        "book_id": 4968
+        "user_id": 234,
+        "book_id": 180
       },
       "response_data": {
-        "response_code": "custom.errors.models.books.available_count",
+        "response_code": "custom.errors.models.books.quantity",
         "response_message": "This book is no longer available"
       },
       "code": 400,
@@ -252,27 +250,8 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 2638,
-        "book_id": 4972
-      },
-      "response_data": {
-        "response_code": "custom.errors.models.books.quantity",
-        "response_message": "This book has been given away"
-      },
-      "code": 400,
-      "show_in_doc": 1,
-      "recorded": true
-    },
-    {
-      "verb": "POST",
-      "path": "/api/v1/borrow",
-      "versions": [
-        "v1"
-      ],
-      "query": null,
-      "request_data": {
-        "user_id": 2640,
-        "book_id": 4973
+        "user_id": 236,
+        "book_id": 181
       },
       "response_data": {
         "response_code": "custom.errors.models.users.insufficient_funds",
@@ -314,10 +293,10 @@
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "user": {
-          "id": 2641,
+          "id": 237,
           "amount": 9999,
           "escrow": 0,
-          "account_no": "EKH0002641",
+          "account_no": "EKH0000237",
           "balance": 9999
         }
       },
@@ -351,8 +330,8 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 5286,
-        "book_id": 4977
+        "user_id": 478,
+        "book_id": 184
       },
       "response_data": {
         "response_code": "custom.errors.models.loans.non_existing",
@@ -370,18 +349,18 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 2644,
-        "book_id": 4978
+        "user_id": 240,
+        "book_id": 185
       },
       "response_data": {
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "loan": {
-          "return_at": "2020-12-12T14:32:01.000Z",
-          "user_id": 2644,
-          "book_id": 4978,
-          "id": 3712,
-          "borrow_at": "2020-12-10T14:32:01.000Z",
+          "return_at": "2020-12-13T04:07:16.000Z",
+          "user_id": 240,
+          "book_id": 185,
+          "id": 171,
+          "borrow_at": "2020-12-11T04:07:16.000Z",
           "amount": 100
         }
       },
@@ -413,7 +392,7 @@
       "versions": [
         "v1"
       ],
-      "query": "user_id=5294",
+      "query": "user_id=486",
       "request_data": null,
       "response_data": {
         "response_code": "custom.errors.record_not_found",
@@ -429,16 +408,16 @@
       "versions": [
         "v1"
       ],
-      "query": "user_id=2649",
+      "query": "user_id=245",
       "request_data": null,
       "response_data": {
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "user": {
-          "id": 2649,
+          "id": 245,
           "amount": 1000,
           "escrow": 0,
-          "account_no": "EKH0002649",
+          "account_no": "EKH0000245",
           "balance": 1000,
           "current_borrowed_books": [
 
@@ -455,31 +434,29 @@
       "versions": [
         "v1"
       ],
-      "query": "user_id=2652",
+      "query": "user_id=248",
       "request_data": null,
       "response_data": {
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "user": {
-          "id": 2652,
+          "id": 248,
           "amount": 1000,
           "escrow": 400,
-          "account_no": "EKH0002652",
+          "account_no": "EKH0000248",
           "balance": 600,
           "current_borrowed_books": [
             {
-              "id": 4993,
-              "quantity": 10,
-              "available_count": 9,
-              "loans_count": 1,
-              "title": "A Monstrous Regiment of Women"
+              "id": 200,
+              "title": "The Golden Apples of the Sun",
+              "quantity": 9,
+              "loans_count": 1
             },
             {
-              "id": 4994,
-              "quantity": 10,
-              "available_count": 9,
-              "loans_count": 1,
-              "title": "Shall not Perish"
+              "id": 201,
+              "title": "Wildfire at Midnight",
+              "quantity": 9,
+              "loans_count": 1
             }
           ]
         }

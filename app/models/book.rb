@@ -11,19 +11,18 @@ class Book < ApplicationRecord
     loans.past
   end
 
-  def subtract_available_count!
+  def subtract_quantity!
     self.lock!
 
     raise CustomException, "custom.errors.models.books.quantity" if quantity.zero?
-    raise CustomException, "custom.errors.models.books.available_count" if available_count.zero?
 
-    self.update!(available_count: self.available_count - 1)
+    self.update!(quantity: self.quantity - 1)
   end
 
-  def increment_available_count!
+  def increment_quantity!
     self.lock!
 
-    self.update!(available_count: self.available_count + 1)
+    self.update!(quantity: self.quantity + 1)
   end
 
   def income from:, till:

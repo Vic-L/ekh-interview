@@ -10,7 +10,7 @@ FactoryBot.define do
     trait :returned do
       return_at { 1.hour.ago }
       after :create do |loan|
-        loan.book.increment_available_count!
+        loan.book.increment_quantity!
       end
     end
   end

@@ -11,21 +11,16 @@ RSpec.describe Loan, type: :model do
     feature '.reduce_book_availability' do
       let(:book) { create(:book) }
       let(:unavailable_book) { create(:book, :unavailable) }
-      let(:out_of_stock_book) { create(:book, :out_of_stock) }
 
-      scenario 'should reduce book available_count by 1 upon creation' do
+      scenario 'should reduce book quantity by 1 upon creation' do
         expect { create(:loan, book: book) }.to change {
-          book.available_count
+          book.quantity
         }.from(10)
         .to(9)
       end
 
       scenario 'should raise error if book is no longer available' do
         expect { create(:loan, book: unavailable_book) }.to raise_error CustomException, "This book is no longer available"
-      end
-
-      scenario 'should raise error if book is no longer available' do
-        expect { create(:loan, book: out_of_stock_book) }.to raise_error CustomException, "This book has been given away"
       end
     end
 
@@ -73,9 +68,9 @@ RSpec.describe Loan, type: :model do
         expect { loan.return! }.to change { loan.reload.return_at }
       end
 
-      scenario 'should increase book available_count' do
+      scenario 'should increase book quantity' do
         expect { loan.return! }.to change {
-          book.reload.available_count
+          book.reload.quantity
         }.from(9)
         .to(10)
       end

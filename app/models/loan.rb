@@ -18,14 +18,14 @@ class Loan < ApplicationRecord
     self.lock!
 
     update!(return_at: DateTime.now)
-    book.increment_available_count!
+    book.increment_quantity!
     user.return!(self)
   end
 
   private
 
   def reduce_book_availability!
-    book.subtract_available_count!
+    book.subtract_quantity!
   end
 
   def increase_user_escrow!

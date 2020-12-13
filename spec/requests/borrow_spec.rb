@@ -5,7 +5,6 @@ require 'rails_helper'
 RSpec.describe 'borrow', type: :request do
   let!(:book) { create(:book) }
   let!(:unavailable_book) { create(:book, :unavailable) }
-  let!(:out_of_stock_book) { create(:book, :out_of_stock) }
   let!(:user) { create(:user) }
   let(:poor_user) { create(:user, :poor) }
 
@@ -68,7 +67,7 @@ RSpec.describe 'borrow', type: :request do
       }.to_json,
       headers: ApiHelpers::DEFAULT_HEADERS
     }.to change {
-      book.reload.available_count
+      book.reload.quantity
     }.from(10)
     .to(9)
   end
@@ -81,19 +80,6 @@ RSpec.describe 'borrow', type: :request do
     headers: ApiHelpers::DEFAULT_HEADERS
 
     expect(response_body.response_message).to eq "This book is no longer available"
-    expect(response_body.response_code).to eq 'custom.errors.models.books.available_count'
-    expect(response.status).to eq 400
-    expect(Loan.count).to eq 0
-  end
-
-  scenario 'should fail if quantity of books is 0', :show_in_doc do
-    post '/api/v1/borrow', params: {
-      user_id: user.id,
-      book_id: out_of_stock_book.id,
-    }.to_json,
-    headers: ApiHelpers::DEFAULT_HEADERS
-
-    expect(response_body.response_message).to eq "This book has been given away"
     expect(response_body.response_code).to eq 'custom.errors.models.books.quantity'
     expect(response.status).to eq 400
     expect(Loan.count).to eq 0

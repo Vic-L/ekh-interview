@@ -112,7 +112,7 @@ RSpec.describe 'return', type: :request do
       }.to_json,
       headers: ApiHelpers::DEFAULT_HEADERS
     }.to change {
-      book.reload.available_count
+      book.reload.quantity
     }.from(9)
     .to(10)
   end
@@ -131,22 +131,5 @@ RSpec.describe 'return', type: :request do
       user.reload.escrow
     }.from(Rails.application.config.price)
     .to(1)
-  end
-  
-  scenario 'should not fail even if quantity of books is 0 and availability is more than quantity' do
-    book.update(quantity: 0)
-
-    post '/api/v1/return', params: {
-      user_id: user.id,
-      book_id: book.id,
-    }.to_json,
-    headers: ApiHelpers::DEFAULT_HEADERS
-
-    expect(response_body.response_message).to eq I18n.t('custom.success.default')
-    expect(response_body.response_code).to eq 'custom.success.default'
-    expect(response.status).to eq 200
-
-    expect(book.reload.available_count).to eq 10
-    expect(book.quantity).to eq 0
   end
 end
