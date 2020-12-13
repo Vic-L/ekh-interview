@@ -13,7 +13,7 @@ module Api
       header 'Accept', 'application/json'
       param :user_id, [Integer, String], required: true
       def user_account
-        @user = User.includes(:loans).includes(loans: :book).find(user_params[:user_id])
+        @user = User.find(user_params[:user_id])
       end
 
       api :GET, '/books', "Query the current remaining number of each book, the total number of loans, and the current loan status between the users."

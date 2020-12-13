@@ -2,6 +2,7 @@
 
 class User < ApplicationRecord
   has_many :loans, inverse_of: :user
+  has_many :current_loans, -> { active }, class_name: 'Loan'
 
   validates :escrow,
             :amount,
@@ -14,10 +15,6 @@ class User < ApplicationRecord
     custom_attributes['balance'] = balance
 
     custom_attributes
-  end
-
-  def current_loans
-    loans.includes(:book).active
   end
 
   def current_borrowed_books

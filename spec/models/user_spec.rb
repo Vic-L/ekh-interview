@@ -7,16 +7,6 @@ RSpec.describe User, type: :model do
   it { should validate_presence_of(:amount) }
 
   feature 'instance methods' do
-    feature '#current_loans' do
-      let!(:user_with_books) { create(:user, :with_books) }
-
-      scenario 'should return only loans that are active' do
-        expect(user_with_books.loans.count).to eq 4
-        expect(user_with_books.current_loans.count).to eq 2
-        expect(user_with_books.current_loans.pluck(:return_at).compact.count).to eq 0 # all have nil values
-      end
-    end
-
     feature '#current_borrowed_books' do
       let!(:user_with_books) { create(:user, :with_books) }
       let!(:another_user_with_books) { create(:user, :with_books) }
