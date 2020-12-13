@@ -41,5 +41,19 @@ RSpec.describe Book, type: :model do
         .to (11)
       end
     end
+
+    feature '#borrow_count' do
+      let!(:book) { create(:book) }
+      let!(:user) { create(:user) }
+      let!(:another_user) { create(:user) }
+      let!(:loan1) { create(:loan, book: book, user: user) }
+      let!(:loan2) { create(:loan, book: book, user: user) }
+      let!(:another_loan1) { create(:loan, book: book, user: another_user) }
+
+      scenario 'should return the number of copies of the book the user is currently loaning' do
+        expect(book.borrow_count(user)).to eq 2
+        expect(book.borrow_count(another_user)).to eq 1
+      end
+    end
   end
 end

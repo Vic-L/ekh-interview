@@ -22,7 +22,7 @@
       "versions": [
         "v1"
       ],
-      "query": "book_id=194&from=2020-12-12&till=2020-12-14",
+      "query": "book_id=750&from=2020-12-12&till=2020-12-14",
       "request_data": null,
       "response_data": {
         "response_code": "custom.errors.record_not_found",
@@ -38,7 +38,7 @@
       "versions": [
         "v1"
       ],
-      "query": "book_id=98&from=2020-22-22&till=2020-12-13",
+      "query": "book_id=376&from=2020-22-22&till=2020-12-13",
       "request_data": null,
       "response_data": {
         "response_code": "custom.errors.apipie.invalid_date",
@@ -54,7 +54,7 @@
       "versions": [
         "v1"
       ],
-      "query": "book_id=99&from=2020-11-29&till=2020-12-06",
+      "query": "book_id=377&from=2020-11-29&till=2020-12-06",
       "request_data": null,
       "response_data": {
         "response_code": "custom.success.default",
@@ -99,48 +99,48 @@
         "response_message": "Success!",
         "books": [
           {
-            "id": 100,
-            "title": "His Dark Materials",
+            "id": 378,
+            "title": "O Jerusalem!",
             "quantity": 9,
             "loans_count": 2,
             "current_loans": [
               {
-                "id": 106,
-                "user_id": 171,
-                "book_id": 100,
-                "borrow_at": "2020-12-12T04:41:34.000Z",
+                "id": 383,
+                "user_id": 341,
+                "book_id": 378,
+                "borrow_at": "2020-12-12T07:20:21.000Z",
                 "return_at": null,
                 "amount": 100,
                 "user": {
-                  "id": 171,
+                  "id": 341,
                   "amount": 1000,
                   "escrow": 200,
-                  "account_no": "EKH0000171",
+                  "account_no": "EKH0000341",
                   "balance": 800
                 }
               }
             ],
             "completed_loans": [
               {
-                "id": 107,
-                "user_id": 171,
-                "book_id": 100,
-                "borrow_at": "2020-12-12T04:41:34.000Z",
-                "return_at": "2020-12-13T03:41:34.000Z",
+                "id": 384,
+                "user_id": 341,
+                "book_id": 378,
+                "borrow_at": "2020-12-12T07:20:21.000Z",
+                "return_at": "2020-12-13T06:20:21.000Z",
                 "amount": 100,
                 "user": {
-                  "id": 171,
+                  "id": 341,
                   "amount": 1000,
                   "escrow": 200,
-                  "account_no": "EKH0000171",
+                  "account_no": "EKH0000341",
                   "balance": 800
                 }
               }
             ]
           },
           {
-            "id": 101,
-            "title": "Postern of Fate",
+            "id": 379,
+            "title": "Sleep the Brave",
             "quantity": 10,
             "loans_count": 0,
             "current_loans": [
@@ -182,8 +182,8 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 346,
-        "book_id": 104
+        "user_id": 686,
+        "book_id": 382
       },
       "response_data": {
         "response_code": "custom.errors.models.invalid",
@@ -201,8 +201,8 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 174,
-        "book_id": 212
+        "user_id": 344,
+        "book_id": 768
       },
       "response_data": {
         "response_code": "custom.errors.models.invalid",
@@ -220,17 +220,17 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 175,
-        "book_id": 108
+        "user_id": 345,
+        "book_id": 386
       },
       "response_data": {
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "loan": {
-          "id": 108,
-          "user_id": 175,
-          "book_id": 108,
-          "borrow_at": "2020-12-13T04:41:34.000Z",
+          "id": 385,
+          "user_id": 345,
+          "book_id": 386,
+          "borrow_at": "2020-12-13T07:20:21.000Z",
           "return_at": null,
           "amount": 100
         }
@@ -247,8 +247,8 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 176,
-        "book_id": 111
+        "user_id": 346,
+        "book_id": 389
       },
       "response_data": {
         "response_code": "custom.errors.models.books.quantity",
@@ -266,8 +266,8 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 178,
-        "book_id": 112
+        "user_id": 348,
+        "book_id": 390
       },
       "response_data": {
         "response_code": "custom.errors.models.users.insufficient_funds",
@@ -309,10 +309,10 @@
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "user": {
-          "id": 179,
+          "id": 349,
           "amount": 9999,
           "escrow": 0,
-          "account_no": "EKH0000179",
+          "account_no": "EKH0000349",
           "balance": 9999
         }
       },
@@ -346,8 +346,8 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 362,
-        "book_id": 115
+        "user_id": 702,
+        "book_id": 393
       },
       "response_data": {
         "response_code": "custom.errors.models.loans.non_existing",
@@ -365,18 +365,18 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 182,
-        "book_id": 116
+        "user_id": 352,
+        "book_id": 394
       },
       "response_data": {
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "loan": {
-          "return_at": "2020-12-13T04:41:34.000Z",
-          "user_id": 182,
-          "book_id": 116,
-          "id": 114,
-          "borrow_at": "2020-12-11T04:41:34.000Z",
+          "return_at": "2020-12-13T07:20:21.000Z",
+          "user_id": 352,
+          "book_id": 394,
+          "id": 391,
+          "borrow_at": "2020-12-11T07:20:21.000Z",
           "amount": 100
         }
       },
@@ -408,7 +408,7 @@
       "versions": [
         "v1"
       ],
-      "query": "user_id=370",
+      "query": "user_id=710",
       "request_data": null,
       "response_data": {
         "response_code": "custom.errors.record_not_found",
@@ -424,16 +424,16 @@
       "versions": [
         "v1"
       ],
-      "query": "user_id=187",
+      "query": "user_id=357",
       "request_data": null,
       "response_data": {
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "user": {
-          "id": 187,
+          "id": 357,
           "amount": 1000,
           "escrow": 0,
-          "account_no": "EKH0000187",
+          "account_no": "EKH0000357",
           "balance": 1000,
           "current_borrowed_books": [
 
@@ -450,29 +450,63 @@
       "versions": [
         "v1"
       ],
-      "query": "user_id=190",
+      "query": "user_id=360",
       "request_data": null,
       "response_data": {
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "user": {
-          "id": 190,
+          "id": 360,
           "amount": 1000,
           "escrow": 400,
-          "account_no": "EKH0000190",
+          "account_no": "EKH0000360",
           "balance": 600,
           "current_borrowed_books": [
             {
-              "id": 131,
-              "title": "The Line of Beauty",
+              "id": 409,
+              "title": "Tender Is the Night",
               "quantity": 9,
-              "loans_count": 1
+              "loans_count": 1,
+              "borrow_count": 1
             },
             {
-              "id": 132,
-              "title": "The Heart Is Deceitful Above All Things",
+              "id": 410,
+              "title": "All the King's Men",
               "quantity": 9,
-              "loans_count": 1
+              "loans_count": 1,
+              "borrow_count": 1
+            }
+          ]
+        }
+      },
+      "code": 200,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/api/v1/user_account",
+      "versions": [
+        "v1"
+      ],
+      "query": "user_id=363",
+      "request_data": null,
+      "response_data": {
+        "response_code": "custom.success.default",
+        "response_message": "Success!",
+        "user": {
+          "id": 363,
+          "amount": 1000,
+          "escrow": 200,
+          "account_no": "EKH0000363",
+          "balance": 800,
+          "current_borrowed_books": [
+            {
+              "id": 415,
+              "title": "Such, Such Were the Joys",
+              "quantity": 8,
+              "loans_count": 2,
+              "borrow_count": 2
             }
           ]
         }

@@ -5,6 +5,7 @@ require 'rails_helper'
 RSpec.describe 'user_account', type: :request do
   let!(:user) { create(:user) }
   let!(:user_with_books) { create(:user, :with_books) }
+  let(:user_with_same_books) { create(:user, :with_same_books) }
 
   scenario 'should return error with missing params', :show_in_doc do
     get '/api/v1/user_account', headers: ApiHelpers::DEFAULT_HEADERS
@@ -45,5 +46,18 @@ RSpec.describe 'user_account', type: :request do
     expect(response.status).to eq 200
 
     expect(response_body.user.current_borrowed_books.length).to eq 2
+    expect(response_body.user.current_borrowed_books.first.borrow_count).to eq 1
+    expect(response_body.user.current_borrowed_books.last.borrow_count).to eq 1
+  end
+
+  scenario 'should return multiple instances of the same book if user borrows multiple copies', :show_in_doc do
+    get '/api/v1/user_account', params: { user_id: user_with_same_books.id }, headers: ApiHelpers::DEFAULT_HEADERS
+
+    expect(response_body.response_message).to eq I18n.t('custom.success.default')
+    expect(response_body.response_code).to eq 'custom.success.default'
+    expect(response.status).to eq 200
+
+    expect(response_body.user.current_borrowed_books.length).to eq 1
+    expect(response_body.user.current_borrowed_books.first.borrow_count).to eq 2
   end
 end

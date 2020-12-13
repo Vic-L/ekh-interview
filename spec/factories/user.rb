@@ -12,6 +12,13 @@ FactoryBot.define do
       end
     end
 
+    trait :with_same_books do
+      after :create do |user|
+        book = create(:book)
+        create_list(:loan, 2, user: user, book: book)
+      end
+    end
+
     trait :poor do
       escrow { 999 }
     end

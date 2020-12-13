@@ -28,4 +28,8 @@ class Book < ApplicationRecord
   def income from:, till:
     completed_loans.where("return_at >= ? AND return_at <= ?", from, till).sum(:amount)
   end
+
+  def borrow_count user
+    user.current_loans.pluck(:book_id).count(self.id)
+  end
 end
