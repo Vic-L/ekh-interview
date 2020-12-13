@@ -22,7 +22,7 @@
       "versions": [
         "v1"
       ],
-      "query": "book_id=334&from=2020-12-12&till=2020-12-14",
+      "query": "book_id=194&from=2020-12-12&till=2020-12-14",
       "request_data": null,
       "response_data": {
         "response_code": "custom.errors.record_not_found",
@@ -38,7 +38,23 @@
       "versions": [
         "v1"
       ],
-      "query": "book_id=168&from=2020-11-29&till=2020-12-06",
+      "query": "book_id=98&from=2020-22-22&till=2020-12-13",
+      "request_data": null,
+      "response_data": {
+        "response_code": "custom.errors.apipie.invalid_date",
+        "response_message": "Your date inputs are invalid"
+      },
+      "code": 400,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/api/v1/book_income",
+      "versions": [
+        "v1"
+      ],
+      "query": "book_id=99&from=2020-11-29&till=2020-12-06",
       "request_data": null,
       "response_data": {
         "response_code": "custom.success.default",
@@ -83,48 +99,48 @@
         "response_message": "Success!",
         "books": [
           {
-            "id": 169,
-            "title": "The Painted Veil",
+            "id": 100,
+            "title": "His Dark Materials",
             "quantity": 9,
             "loans_count": 2,
             "current_loans": [
               {
-                "id": 163,
-                "user_id": 229,
-                "book_id": 169,
-                "borrow_at": "2020-12-12T04:07:15.000Z",
+                "id": 106,
+                "user_id": 171,
+                "book_id": 100,
+                "borrow_at": "2020-12-12T04:41:34.000Z",
                 "return_at": null,
                 "amount": 100,
                 "user": {
-                  "id": 229,
+                  "id": 171,
                   "amount": 1000,
                   "escrow": 200,
-                  "account_no": "EKH0000229",
+                  "account_no": "EKH0000171",
                   "balance": 800
                 }
               }
             ],
             "completed_loans": [
               {
-                "id": 164,
-                "user_id": 229,
-                "book_id": 169,
-                "borrow_at": "2020-12-12T04:07:15.000Z",
-                "return_at": "2020-12-13T03:07:15.000Z",
+                "id": 107,
+                "user_id": 171,
+                "book_id": 100,
+                "borrow_at": "2020-12-12T04:41:34.000Z",
+                "return_at": "2020-12-13T03:41:34.000Z",
                 "amount": 100,
                 "user": {
-                  "id": 229,
+                  "id": 171,
                   "amount": 1000,
                   "escrow": 200,
-                  "account_no": "EKH0000229",
+                  "account_no": "EKH0000171",
                   "balance": 800
                 }
               }
             ]
           },
           {
-            "id": 170,
-            "title": "Of Mice and Men",
+            "id": 101,
+            "title": "Postern of Fate",
             "quantity": 10,
             "loans_count": 0,
             "current_loans": [
@@ -166,8 +182,8 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 462,
-        "book_id": 173
+        "user_id": 346,
+        "book_id": 104
       },
       "response_data": {
         "response_code": "custom.errors.models.invalid",
@@ -185,8 +201,8 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 232,
-        "book_id": 350
+        "user_id": 174,
+        "book_id": 212
       },
       "response_data": {
         "response_code": "custom.errors.models.invalid",
@@ -204,17 +220,17 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 233,
-        "book_id": 177
+        "user_id": 175,
+        "book_id": 108
       },
       "response_data": {
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "loan": {
-          "id": 165,
-          "user_id": 233,
-          "book_id": 177,
-          "borrow_at": "2020-12-13T04:07:15.000Z",
+          "id": 108,
+          "user_id": 175,
+          "book_id": 108,
+          "borrow_at": "2020-12-13T04:41:34.000Z",
           "return_at": null,
           "amount": 100
         }
@@ -231,8 +247,8 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 234,
-        "book_id": 180
+        "user_id": 176,
+        "book_id": 111
       },
       "response_data": {
         "response_code": "custom.errors.models.books.quantity",
@@ -250,8 +266,8 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 236,
-        "book_id": 181
+        "user_id": 178,
+        "book_id": 112
       },
       "response_data": {
         "response_code": "custom.errors.models.users.insufficient_funds",
@@ -293,10 +309,10 @@
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "user": {
-          "id": 237,
+          "id": 179,
           "amount": 9999,
           "escrow": 0,
-          "account_no": "EKH0000237",
+          "account_no": "EKH0000179",
           "balance": 9999
         }
       },
@@ -330,8 +346,8 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 478,
-        "book_id": 184
+        "user_id": 362,
+        "book_id": 115
       },
       "response_data": {
         "response_code": "custom.errors.models.loans.non_existing",
@@ -349,18 +365,18 @@
       ],
       "query": null,
       "request_data": {
-        "user_id": 240,
-        "book_id": 185
+        "user_id": 182,
+        "book_id": 116
       },
       "response_data": {
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "loan": {
-          "return_at": "2020-12-13T04:07:16.000Z",
-          "user_id": 240,
-          "book_id": 185,
-          "id": 171,
-          "borrow_at": "2020-12-11T04:07:16.000Z",
+          "return_at": "2020-12-13T04:41:34.000Z",
+          "user_id": 182,
+          "book_id": 116,
+          "id": 114,
+          "borrow_at": "2020-12-11T04:41:34.000Z",
           "amount": 100
         }
       },
@@ -392,7 +408,7 @@
       "versions": [
         "v1"
       ],
-      "query": "user_id=486",
+      "query": "user_id=370",
       "request_data": null,
       "response_data": {
         "response_code": "custom.errors.record_not_found",
@@ -408,16 +424,16 @@
       "versions": [
         "v1"
       ],
-      "query": "user_id=245",
+      "query": "user_id=187",
       "request_data": null,
       "response_data": {
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "user": {
-          "id": 245,
+          "id": 187,
           "amount": 1000,
           "escrow": 0,
-          "account_no": "EKH0000245",
+          "account_no": "EKH0000187",
           "balance": 1000,
           "current_borrowed_books": [
 
@@ -434,27 +450,27 @@
       "versions": [
         "v1"
       ],
-      "query": "user_id=248",
+      "query": "user_id=190",
       "request_data": null,
       "response_data": {
         "response_code": "custom.success.default",
         "response_message": "Success!",
         "user": {
-          "id": 248,
+          "id": 190,
           "amount": 1000,
           "escrow": 400,
-          "account_no": "EKH0000248",
+          "account_no": "EKH0000190",
           "balance": 600,
           "current_borrowed_books": [
             {
-              "id": 200,
-              "title": "The Golden Apples of the Sun",
+              "id": 131,
+              "title": "The Line of Beauty",
               "quantity": 9,
               "loans_count": 1
             },
             {
-              "id": 201,
-              "title": "Wildfire at Midnight",
+              "id": 132,
+              "title": "The Heart Is Deceitful Above All Things",
               "quantity": 9,
               "loans_count": 1
             }

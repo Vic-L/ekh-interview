@@ -25,6 +25,18 @@ RSpec.describe 'book_income', type: :request do
     expect(response.status).to eq 404
   end
 
+  scenario 'should fail with invalid date params', :show_in_doc do
+    get '/api/v1/book_income', params: {
+      book_id: book.id,
+      from: "2020-22-22",
+      till: Date.today.iso8601,
+    }, headers: ApiHelpers::DEFAULT_HEADERS
+
+    expect(response_body.response_message).to eq "Your date inputs are invalid"
+    expect(response_body.response_code).to eq 'custom.errors.apipie.invalid_date'
+    expect(response.status).to eq 400
+  end
+
   feature 'with loans' do
     let!(:active_loan) { create(
         :loan,

@@ -21,6 +21,14 @@ module ApiRescues
       }, status: 400
     end
 
+    rescue_from Date::Error do |e|
+      response_code = 'custom.errors.apipie.invalid_date'
+      render json: {
+        response_code: response_code,
+        response_message: I18n.t(response_code),
+      }, status: 400
+    end
+
     rescue_from Apipie::ParamInvalid do |e|
       render json: {
         response_code: 'custom.errors.apipie.params_invalid',
