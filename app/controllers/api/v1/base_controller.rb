@@ -21,7 +21,7 @@ module Api
       header 'Content-Type', 'application/json'
       header 'Accept', 'application/json'
       def books
-        @books = Book.includes(:loans).includes(loans: :user)
+        @books = Book.includes(:current_loans).includes(:completed_loans).includes(loans: :user)
       end
 
       api :POST, '/create_user', "Create a user interface, the requested parameters support setting the initial amount, returning the user ID"

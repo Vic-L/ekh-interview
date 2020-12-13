@@ -2,19 +2,10 @@ require 'rails_helper'
 
 RSpec.describe Book, type: :model do
   it { should have_many :loans }
+  it { should have_many :current_loans }
+  it { should have_many :completed_loans }
 
   feature 'instance methods' do
-    feature 'current_loans' do
-      let!(:book) { create(:book) }
-      let!(:loan) { create(:loan, book: book) }
-      let!(:returned_loan) { create(:loan, :returned, book: book) }
-
-      scenario 'should return only loans that are active' do
-        expect(book.current_loans.count).to eq 1
-        expect(book.current_loans.first.id).to eq loan.id
-      end
-    end
-
     feature '#subtract_quantity!' do
       let(:book) { create(:book) }
       let(:unavailable_book) { create(:book, :unavailable) }

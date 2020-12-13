@@ -2,14 +2,8 @@
 
 class Book < ApplicationRecord
   has_many :loans, inverse_of: :book
-
-  def current_loans
-    loans.active
-  end
-
-  def completed_loans
-    loans.past
-  end
+  has_many :current_loans, -> { active }, class_name: 'Loan'
+  has_many :completed_loans, -> { past }, class_name: 'Loan'
 
   def subtract_quantity!
     self.lock!
