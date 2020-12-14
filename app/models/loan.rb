@@ -15,11 +15,13 @@ class Loan < ApplicationRecord
   scope :past, -> { where.not(return_at: nil) }
 
   def return!
-    self.lock!
+    ActiveRecord::Base.transaction do
+      self.lock!
 
-    update!(return_at: DateTime.now)
-    book.increment_quantity!
-    user.return!(self)
+      update!(return_at: DateTime.now)
+      book.increment_quantity!
+      user.return!(self)
+    end
   end
 
   private
